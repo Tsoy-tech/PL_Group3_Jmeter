@@ -135,7 +135,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -143,18 +143,6 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-          <stringProp name="delimiter">\n</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">C:/Users/Tsoy/Desktop/git/Tsoy-tech-PL_Group3_Jmeter/JmeterScripts/UC_02_XDESK/users.csv</stringProp>
-          <boolProp name="ignoreFirstLine">false</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">login</stringProp>
-        </CSVDataSet>
-        <hashTree/>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
@@ -2800,14 +2788,14 @@
                   <elementProp name="page" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.name">page</stringProp>
-                    <stringProp name="Argument.value">${__Random(0,4,)}</stringProp>
+                    <stringProp name="Argument.value">${__Random(0,10,)}</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
                   <elementProp name="size" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.name">size</stringProp>
-                    <stringProp name="Argument.value">100</stringProp>
+                    <stringProp name="Argument.value">10</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
