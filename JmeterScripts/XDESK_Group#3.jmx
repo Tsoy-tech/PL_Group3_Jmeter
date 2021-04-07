@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="XDESK_Group#3" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -12,45 +12,8 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>true</time>
-            <latency>true</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>true</label>
-            <code>true</code>
-            <message>true</message>
-            <threadName>true</threadName>
-            <dataType>true</dataType>
-            <encoding>false</encoding>
-            <assertions>true</assertions>
-            <subresults>true</subresults>
-            <responseData>false</responseData>
-            <samplerData>false</samplerData>
-            <xml>false</xml>
-            <fieldNames>true</fieldNames>
-            <responseHeaders>false</responseHeaders>
-            <requestHeaders>false</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <bytes>true</bytes>
-            <sentBytes>true</sentBytes>
-            <url>true</url>
-            <threadCounts>true</threadCounts>
-            <idleTime>true</idleTime>
-            <connectTime>true</connectTime>
-          </value>
-        </objProp>
-        <stringProp name="filename"></stringProp>
-      </ResultCollector>
-      <hashTree/>
       <com.blazemeter.jmeter.RandomCSVDataSetConfig guiclass="com.blazemeter.jmeter.RandomCSVDataSetConfigGui" testclass="com.blazemeter.jmeter.RandomCSVDataSetConfig" testname="RandomUser_UC01" enabled="true">
-        <stringProp name="filename">C:\Users\Tsoy\Desktop\git\PL_Group3_Jmeter\JmeterScripts\usersDirectors.csv</stringProp>
+        <stringProp name="filename">usersDirectors.csv</stringProp>
         <stringProp name="fileEncoding">UTF-8</stringProp>
         <stringProp name="delimiter"></stringProp>
         <stringProp name="variableNames">loginUC01</stringProp>
@@ -61,7 +24,7 @@
       </com.blazemeter.jmeter.RandomCSVDataSetConfig>
       <hashTree/>
       <com.blazemeter.jmeter.RandomCSVDataSetConfig guiclass="com.blazemeter.jmeter.RandomCSVDataSetConfigGui" testclass="com.blazemeter.jmeter.RandomCSVDataSetConfig" testname="RandomUser_UC02" enabled="true">
-        <stringProp name="filename">C:\Users\Tsoy\Desktop\git\PL_Group3_Jmeter\JmeterScripts\usersEngineers.csv</stringProp>
+        <stringProp name="filename">usersEngineers.csv</stringProp>
         <stringProp name="fileEncoding">UTF-8</stringProp>
         <stringProp name="delimiter"></stringProp>
         <stringProp name="variableNames">loginUC02</stringProp>
@@ -72,7 +35,7 @@
       </com.blazemeter.jmeter.RandomCSVDataSetConfig>
       <hashTree/>
       <com.blazemeter.jmeter.RandomCSVDataSetConfig guiclass="com.blazemeter.jmeter.RandomCSVDataSetConfigGui" testclass="com.blazemeter.jmeter.RandomCSVDataSetConfig" testname="RandomUser_UC03" enabled="true">
-        <stringProp name="filename">C:\Users\Tsoy\Desktop\git\PL_Group3_Jmeter\JmeterScripts\usersDirectors.csv</stringProp>
+        <stringProp name="filename">usersDirectors.csv</stringProp>
         <stringProp name="fileEncoding">UTF-8</stringProp>
         <stringProp name="delimiter"></stringProp>
         <stringProp name="variableNames">loginUC03</stringProp>
@@ -148,7 +111,11 @@
             <stringProp name="Argument.name">influx_host</stringProp>
             <stringProp name="Argument.value">localhost</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
-            <stringProp name="Argument.desc">172.31.222.89</stringProp>
+          </elementProp>
+          <elementProp name="influx_db" elementType="Argument">
+            <stringProp name="Argument.name">influx_db</stringProp>
+            <stringProp name="Argument.value">xdesk</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
@@ -165,42 +132,24 @@
         <boolProp name="CacheManager.controlledByThread">false</boolProp>
       </CacheManager>
       <hashTree/>
-      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>true</time>
-            <latency>true</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>true</label>
-            <code>true</code>
-            <message>true</message>
-            <threadName>true</threadName>
-            <dataType>true</dataType>
-            <encoding>false</encoding>
-            <assertions>true</assertions>
-            <subresults>true</subresults>
-            <responseData>false</responseData>
-            <samplerData>false</samplerData>
-            <xml>false</xml>
-            <fieldNames>true</fieldNames>
-            <responseHeaders>false</responseHeaders>
-            <requestHeaders>false</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <bytes>true</bytes>
-            <sentBytes>true</sentBytes>
-            <url>true</url>
-            <threadCounts>true</threadCounts>
-            <idleTime>true</idleTime>
-            <connectTime>true</connectTime>
-          </value>
-        </objProp>
-        <stringProp name="filename"></stringProp>
-      </ResultCollector>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery">SELECT 1 FROM DUAL</stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+        <stringProp name="dataSource">jdbcConnection</stringProp>
+        <stringProp name="dbUrl">jdbc:oracle:thin:@192.168.14.53:1522:orcl</stringProp>
+        <stringProp name="driver">oracle.jdbc.OracleDriver</stringProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">c##x5</stringProp>
+        <stringProp name="poolMax">0</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">c##x5</stringProp>
+      </JDBCDataSource>
       <hashTree/>
       <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener InfluxDB 1.x" enabled="true">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
@@ -212,7 +161,7 @@
             </elementProp>
             <elementProp name="influxdbUrl" elementType="Argument">
               <stringProp name="Argument.name">influxdbUrl</stringProp>
-              <stringProp name="Argument.value">http://${influx_host}:8086/write?db=testDB</stringProp>
+              <stringProp name="Argument.value">http://${influx_host}:8086/write?db=${influx_db}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="application" elementType="Argument">
@@ -305,7 +254,7 @@
             </elementProp>
             <elementProp name="influxdbToken" elementType="Argument">
               <stringProp name="Argument.name">influxdbToken</stringProp>
-              <stringProp name="Argument.value">G5Uf3dONIZjy5umcuzTdytDusTug8b8snQ8EFXWpGbQraGSsduEgKmkMcD9iYJwPVtcG3JhP61KzVasVf22XkA==</stringProp>
+              <stringProp name="Argument.value">bucket_token_read_write</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -317,9 +266,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">3</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -1359,6 +1308,12 @@ vars.put(&quot;shopid&quot;, shop);</stringProp>
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">ticket_id</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
             </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If USER" enabled="true">
@@ -1429,6 +1384,12 @@ vars.put(&quot;shopid&quot;, shop);</stringProp>
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">ticket_id</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              </JSONPostProcessor>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -2354,23 +2315,21 @@ if (vars.get(&quot;ticket_id&quot;) == null) {
     return &quot;ticket id is null&quot;
 }
 
-Connection conn = DataSourceElement.getConnection(&quot;jdbcConnection&quot;)
-Statement sql = conn.createStatement()
-
-sql.execute(&quot;UPDATE ticket SET state_id = 1 WHERE id = &quot; + vars.get(&quot;ticket_id&quot;))
-sql.execute(&quot;insert INTO TASK (external_system,ID,external_id, CHANGE_ID,TICKET_ID, GUID, PRIORITY_ID, STATE_ID,CLIENT_ID,SOLUTION_GROUP_ID, CREATE_DATE, SLA_DATE, LAST_EDIT_DATE, SYNC_MASK,TEXT, HEADER, CONTRACTOR_ID,ENGINEER_ID) VALUES (&apos;ASKO&apos;,&quot; + vars.get(&quot;ticket_id&quot;) + &quot;,&apos;TSK_1800000&apos;, &apos;IDC2D620524153zdzPWAoX9OFgW4UB&apos;,&quot; + vars.get(&quot;ticket_id&quot;) + &quot;,&apos;d830c5ee-9b77-4bd1-879a-0c4d2c282a67&apos;, 3, 1,106,9, 1511190000000, null, 1511622000000,1, &apos;Просим решить проблему в кратчайший срок&apos;,&apos;Уведомление о нарушении работы холодильного оборудования&apos;, 102, 103)&quot;)
-
-conn.close()
-
+try {
+	Connection conn = DataSourceElement.getConnection(&quot;jdbcConnection&quot;)
+	Statement sql = conn.createStatement()
+	
+	sql.execute(&quot;UPDATE ticket SET state_id = 1, engineer_id = 103, contractor_id = 102 WHERE id = &quot; + vars.get(&quot;ticket_id&quot;))
+	sql.execute(&quot;insert INTO TASK (external_system,ID,external_id, CHANGE_ID,TICKET_ID, GUID, PRIORITY_ID, STATE_ID,CLIENT_ID,SOLUTION_GROUP_ID, CREATE_DATE, SLA_DATE, LAST_EDIT_DATE, SYNC_MASK,TEXT, HEADER, CONTRACTOR_ID,ENGINEER_ID) VALUES (&apos;ASKO&apos;,&quot; + vars.get(&quot;ticket_id&quot;) + &quot;,&apos;TSK_1800000&apos;, &apos;IDC2D620524153zdzPWAoX9OFgW4UB&apos;,&quot; + vars.get(&quot;ticket_id&quot;) + &quot;,&apos;d830c5ee-9b77-4bd1-879a-0c4d2c282a67&apos;, 3, 1,106,9, 1511190000000, null, 1511622000000,1, &apos;Просим решить проблему в кратчайший срок&apos;,&apos;Уведомление о нарушении работы холодильного оборудования&apos;, 102, 103)&quot;)
+	
+	conn.close()
+} catch(Exception ex) {
+	SampleResult.setSuccessful(false)
+	SampleResult.setResponseMessage(&quot;Message: &quot; + ex.getMessage())
+}
 return vars.get(&quot;ticket_id&quot;)</stringProp>
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
-        <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-          <boolProp name="displayJMeterProperties">false</boolProp>
-          <boolProp name="displayJMeterVariables">true</boolProp>
-          <boolProp name="displaySystemProperties">false</boolProp>
-        </DebugSampler>
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC02_CommentRandomTicket" enabled="true">
@@ -2379,7 +2338,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">10</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -3546,7 +3505,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Commentary" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Commentary" enabled="false">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -3560,7 +3519,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;text&quot;:&quot;${commentaryRandom}&quot;,&quot;files&quot;:[]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;text&quot;:&quot;${__RandomString(16,abcdefghijklmnopqrstuvwxyz .,)}&quot;,&quot;files&quot;:[]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3703,20 +3662,14 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           </ModuleController>
           <hashTree/>
         </hashTree>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-          <boolProp name="displayJMeterProperties">false</boolProp>
-          <boolProp name="displayJMeterVariables">true</boolProp>
-          <boolProp name="displaySystemProperties">false</boolProp>
-        </DebugSampler>
-        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC03_CloseRandomTicket" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -3910,9 +3863,9 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           </HTTPSamplerProxy>
           <hashTree>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">ticket_number</stringProp>
+              <stringProp name="JSONPostProcessor.referenceNames">ticket_id</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.content.[*].id</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
@@ -3943,7 +3896,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
                 <elementProp name="q" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">q</stringProp>
-                  <stringProp name="Argument.value">${ticket_number}</stringProp>
+                  <stringProp name="Argument.value">${ticket_id}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -4126,7 +4079,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_number}-82" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_id}-82" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -4134,7 +4087,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_number}</stringProp>
+            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_id}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4183,7 +4136,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_number}/comment/-83" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_id}/comment/-83" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -4191,7 +4144,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_number}/comment/</stringProp>
+            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_id}/comment/</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4237,6 +4190,35 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 ASKO Set Contractor For Ticket" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import java.sql.Connection
+import java.sql.Statement
+import org.apache.jmeter.protocol.jdbc.config.DataSourceElement
+import groovy.sql.Sql
+
+if (vars.get(&quot;ticket_id&quot;) == null) {
+    return &quot;ticket id is null&quot;
+}
+
+try {
+	Connection conn = DataSourceElement.getConnection(&quot;jdbcConnection&quot;)
+	Statement sql = conn.createStatement()
+	
+	sql.execute(&quot;UPDATE ticket SET state_id = 1, engineer_id = 103, contractor_id = 102 WHERE id = &quot; + vars.get(&quot;ticket_id&quot;))
+	
+	conn.close()
+} catch(Exception ex) {
+	SampleResult.setSuccessful(false)
+	SampleResult.setResponseMessage(&quot;Message: &quot; + ex.getMessage())
+}
+return vars.get(&quot;ticket_id&quot;)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="TestPlan.comments">Костыль, для генерации отчета при закрытии тикета (иначе - 400 bad request)...</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think Time" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
@@ -4254,7 +4236,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_number}/solve/-84" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_id}/solve/-84" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -4262,7 +4244,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_number}/solve/</stringProp>
+            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_id}/solve/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4330,7 +4312,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/report/${ticket_number}-115" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/report/${ticket_id}-115" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="timeZoneOffset" elementType="HTTPArgument">
@@ -4346,7 +4328,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/api/report/${ticket_number}</stringProp>
+            <stringProp name="HTTPSampler.path">/api/report/${ticket_id}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5194,6 +5176,18 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">1500</stringProp>
+        </TestAction>
+        <hashTree>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+            <stringProp name="ConstantTimer.delay">1000</stringProp>
+            <stringProp name="RandomTimer.range">100</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_TR07_Logout" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
@@ -5210,39 +5204,6 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="true">
-        <stringProp name="ProxyControlGui.port">8888</stringProp>
-        <collectionProp name="ProxyControlGui.exclude_list"/>
-        <collectionProp name="ProxyControlGui.include_list"/>
-        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
-        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
-        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
-        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
-        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
-        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
-        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
-        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
-        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">0</intProp>
-        <stringProp name="ProxyControlGui.default_encoding"></stringProp>
-        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
-        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
-        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
-        <boolProp name="ProxyControlGui.regex_match">false</boolProp>
-        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
-        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
-        <stringProp name="ProxyControlGui.domains">learning.pflb.ru</stringProp>
-        <boolProp name="ProxyControlGui.detect_graphql_request">true</boolProp>
-      </ProxyControl>
-      <hashTree/>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Ultimate Thread Group" enabled="false">
-        <collectionProp name="ultimatethreadgroupdata"/>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-      </kg.apc.jmeter.threads.UltimateThreadGroup>
-      <hashTree/>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Test Fragment" enabled="false"/>
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="OpenLoginPage" enabled="true"/>
