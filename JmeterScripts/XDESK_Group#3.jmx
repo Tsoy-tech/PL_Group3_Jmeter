@@ -151,7 +151,7 @@
         <stringProp name="username">c##x5</stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener InfluxDB 1.x" enabled="false">
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener InfluxDB 1.x" enabled="true">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
           <collectionProp name="Arguments.arguments">
             <elementProp name="influxdbMetricsSender" elementType="Argument">
@@ -2332,7 +2332,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
         </JSR223Sampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC02_CommentRandomTicket" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC02_CommentRandomTicket" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3519,7 +3519,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;text&quot;:&quot;${commentaryRandom}&quot;,&quot;files&quot;:[]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;text&quot;:&quot;${__RandomString(16,abcdefghijklmnopqrstuvwxyz .,)}&quot;,&quot;files&quot;:[]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3663,7 +3663,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC03_CloseRandomTicket" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC03_CloseRandomTicket" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -7633,43 +7633,6 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>true</time>
-            <latency>true</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>true</label>
-            <code>true</code>
-            <message>true</message>
-            <threadName>true</threadName>
-            <dataType>true</dataType>
-            <encoding>false</encoding>
-            <assertions>true</assertions>
-            <subresults>true</subresults>
-            <responseData>false</responseData>
-            <samplerData>false</samplerData>
-            <xml>false</xml>
-            <fieldNames>true</fieldNames>
-            <responseHeaders>false</responseHeaders>
-            <requestHeaders>false</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <bytes>true</bytes>
-            <sentBytes>true</sentBytes>
-            <url>true</url>
-            <threadCounts>true</threadCounts>
-            <idleTime>true</idleTime>
-            <connectTime>true</connectTime>
-          </value>
-        </objProp>
-        <stringProp name="filename"></stringProp>
-      </ResultCollector>
-      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
