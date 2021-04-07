@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="XDESK_Group#3" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -266,7 +266,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">3</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -2319,7 +2319,7 @@ try {
 	Connection conn = DataSourceElement.getConnection(&quot;jdbcConnection&quot;)
 	Statement sql = conn.createStatement()
 	
-	sql.execute(&quot;UPDATE ticket SET state_id = 1 WHERE id = &quot; + vars.get(&quot;ticket_id&quot;))
+	sql.execute(&quot;UPDATE ticket SET state_id = 1, engineer_id = 103, contractor_id = 102 WHERE id = &quot; + vars.get(&quot;ticket_id&quot;))
 	sql.execute(&quot;insert INTO TASK (external_system,ID,external_id, CHANGE_ID,TICKET_ID, GUID, PRIORITY_ID, STATE_ID,CLIENT_ID,SOLUTION_GROUP_ID, CREATE_DATE, SLA_DATE, LAST_EDIT_DATE, SYNC_MASK,TEXT, HEADER, CONTRACTOR_ID,ENGINEER_ID) VALUES (&apos;ASKO&apos;,&quot; + vars.get(&quot;ticket_id&quot;) + &quot;,&apos;TSK_1800000&apos;, &apos;IDC2D620524153zdzPWAoX9OFgW4UB&apos;,&quot; + vars.get(&quot;ticket_id&quot;) + &quot;,&apos;d830c5ee-9b77-4bd1-879a-0c4d2c282a67&apos;, 3, 1,106,9, 1511190000000, null, 1511622000000,1, &apos;Просим решить проблему в кратчайший срок&apos;,&apos;Уведомление о нарушении работы холодильного оборудования&apos;, 102, 103)&quot;)
 	
 	conn.close()
@@ -3667,7 +3667,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -3863,9 +3863,9 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           </HTTPSamplerProxy>
           <hashTree>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">ticket_number</stringProp>
+              <stringProp name="JSONPostProcessor.referenceNames">ticket_id</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.content.[*].id</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
@@ -3896,7 +3896,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
                 <elementProp name="q" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">q</stringProp>
-                  <stringProp name="Argument.value">${ticket_number}</stringProp>
+                  <stringProp name="Argument.value">${ticket_id}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -4079,7 +4079,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_number}-82" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_id}-82" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -4087,7 +4087,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_number}</stringProp>
+            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_id}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4136,7 +4136,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_number}/comment/-83" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_id}/comment/-83" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -4144,7 +4144,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_number}/comment/</stringProp>
+            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_id}/comment/</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4190,6 +4190,35 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 ASKO Set Contractor For Ticket" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import java.sql.Connection
+import java.sql.Statement
+import org.apache.jmeter.protocol.jdbc.config.DataSourceElement
+import groovy.sql.Sql
+
+if (vars.get(&quot;ticket_id&quot;) == null) {
+    return &quot;ticket id is null&quot;
+}
+
+try {
+	Connection conn = DataSourceElement.getConnection(&quot;jdbcConnection&quot;)
+	Statement sql = conn.createStatement()
+	
+	sql.execute(&quot;UPDATE ticket SET state_id = 1, engineer_id = 103, contractor_id = 102 WHERE id = &quot; + vars.get(&quot;ticket_id&quot;))
+	
+	conn.close()
+} catch(Exception ex) {
+	SampleResult.setSuccessful(false)
+	SampleResult.setResponseMessage(&quot;Message: &quot; + ex.getMessage())
+}
+return vars.get(&quot;ticket_id&quot;)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="TestPlan.comments">Костыль, для генерации отчета при закрытии тикета (иначе - 400 bad request)...</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think Time" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
@@ -4207,7 +4236,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_number}/solve/-84" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/ticket/${ticket_id}/solve/-84" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -4215,7 +4244,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_number}/solve/</stringProp>
+            <stringProp name="HTTPSampler.path">/api/ticket/${ticket_id}/solve/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4283,7 +4312,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/report/${ticket_number}-115" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/api/report/${ticket_id}-115" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="timeZoneOffset" elementType="HTTPArgument">
@@ -4299,7 +4328,7 @@ return vars.get(&quot;ticket_id&quot;)</stringProp>
             <stringProp name="HTTPSampler.port">${port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/api/report/${ticket_number}</stringProp>
+            <stringProp name="HTTPSampler.path">/api/report/${ticket_id}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
